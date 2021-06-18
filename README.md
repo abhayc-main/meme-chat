@@ -1,7 +1,7 @@
 # Zephyr💨🍃
 A chat application that focuses on dynamic connectivity
 
-> A React.js project
+> A React.js // Next.js project
 
 ## Available Scripts
 
