@@ -3,7 +3,8 @@ import { Avatar } from "@material-ui/core"
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import { Icon } from "@material-ui/core";
-import IconButton from 'material-ui/IconButton';
+import IconButton from '@material-ui/core/IconButton';
+
 
 function Sidebar() {
     return (
@@ -12,13 +13,17 @@ function Sidebar() {
                 <UserAvatar />
 
                 <IconsContainer>
+
                      <IconButton>
                         <UnfoldMoreIcon />
                      </IconButton> 
+
                      <IconButton>
                          <ChatBubbleOutlineIcon />
                      </IconButton>
+
                 </IconsContainer>
+
             </Header>
         </Container>
     )
@@ -32,9 +37,23 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-
+    display: flex;
+    position: sticky;
+    top: 0;
+    backround-color: white;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    height: 80px;
+    border-bottom: 1px solid whitesmoke;
 `;
 
-const UserAvatar = styled(Avatar)``;
+const UserAvatar = styled(Avatar)`
+    cursor: pointer;
+     :hover{
+         opacity: 0.8
+     } 
+`;
 
 const IconsContainer = styled.div``;
