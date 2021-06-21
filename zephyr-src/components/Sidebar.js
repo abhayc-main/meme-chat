@@ -4,7 +4,7 @@ import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import { Icon } from "@material-ui/core";
 import IconButton from '@material-ui/core/IconButton';
-
+import Search from "@material-ui/icons/Search";
 
 function Sidebar() {
     return (
@@ -25,6 +25,10 @@ function Sidebar() {
                 </IconsContainer>
 
             </Header>
+
+            <SearchIcon>
+                <Search />
+            </SearchIcon>
         </Container>
     )
 }
@@ -32,9 +36,9 @@ function Sidebar() {
 export default Sidebar;
 
 // THis is where we can have our css in a function so we can call it.
-const Container = styled.div`
+const Container = styled.div``;
 
-`;
+const SearchIcon  = styled.div``;
 
 const Header = styled.div`
     display: flex;
