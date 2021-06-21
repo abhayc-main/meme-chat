@@ -1,5 +1,5 @@
 {
-  "name": "the-zephyr",
+  "name": "zephyr",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,6 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "feather-icons": "^4.28.0",
     "next": "11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
