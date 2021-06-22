@@ -1,26 +1,40 @@
-import styled from "styled-components";
+import styled from "styled-components"; 
 import { Avatar } from "@material-ui/core"
-import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-import { Icon } from "@material-ui/core";
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import ChatIcon from '@material-ui/icons/Chat';
+import { Icon, Button } from "@material-ui/core";
 import IconButton from '@material-ui/core/IconButton';
 import Search from "@material-ui/icons/Search";
 
+
 function Sidebar() {
+
+    const createChat = () => {
+        const input = prompt(
+            "Please enter a user's email address to chat with. "
+        )
+        if (!input) return null;
+
+        if (EmailValidator.validate(input)){
+            //Add chats -- we need user's login
+        }
+    }
+    //1E1E1E => Backround Color
     return (
         <Container>
-            <Header>
+            <Header >
+                
                 <UserAvatar />
 
                 <IconsContainer>
-
-                     <IconButton>
-                        <UnfoldMoreIcon />
-                     </IconButton> 
-
-                     <IconButton>
-                         <ChatBubbleOutlineIcon />
+                    
+                    <IconButton>
+                         <ChatIcon />
                      </IconButton>
+
+                     <IconButton>
+                        <MoreVertIcon />
+                     </IconButton> 
 
                 </IconsContainer>
 
@@ -28,7 +42,10 @@ function Sidebar() {
 
             <SearchIcon>
                 <Search />
+                <SearchInput placeholder="Search in chat" />
             </SearchIcon>
+
+            <NewChat>New Chat</NewChat>
         </Container>
     )
 }
@@ -38,7 +55,17 @@ export default Sidebar;
 // THis is where we can have our css in a function so we can call it.
 const Container = styled.div``;
 
-const SearchIcon  = styled.div``;
+const NewChat = styled(Button)`
+    width: 100%;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+
+`;
+
+const SearchIcon  = styled.div`
+    
+`;
+
 
 const Header = styled.div`
     display: flex;
@@ -52,6 +79,13 @@ const Header = styled.div`
     height: 80px;
     border-bottom: 1px solid whitesmoke;
 `;
+
+const SearchInput = styled.input`
+    outline-width: 0;
+    flex: 1;
+    border: none;
+`;
+
 
 const UserAvatar = styled(Avatar)`
     cursor: pointer;
