@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import {auth, db} from "../backend/firebase"
+import {auth, db} from "../firebase"
 import login from './login'
 
 function MyApp({ Component, pageProps }) {
