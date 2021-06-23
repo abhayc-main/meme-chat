@@ -25,7 +25,7 @@ function Sidebar() {
             <Header >
                 
                 <UserAvatar />
-
+ 
                 <IconsContainer>
                     
                     <IconButton>

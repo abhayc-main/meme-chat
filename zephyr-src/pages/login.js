@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styled from"styled-components"
 
-function Login() {
+function login() {
     return (
         <Container>
             <Head>
@@ -12,8 +12,8 @@ function Login() {
     )
 }
 
-export default Login
+export default login;
 
 
 const Container = styled.div`
-`;
+`; 
