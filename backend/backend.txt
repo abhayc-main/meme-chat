@@ -1,2 +1,1 @@
-Mongo DB and socket.io
-
+Just firebase for future builds will be done with a java backend

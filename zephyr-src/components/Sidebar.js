@@ -5,7 +5,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 import { Icon, Button } from "@material-ui/core";
 import IconButton from '@material-ui/core/IconButton';
 import Search from "@material-ui/icons/Search";
-
+import * as EmailValidator from "email-validator"
 
 function Sidebar() {
 
@@ -14,9 +14,9 @@ function Sidebar() {
             "Please enter a user's email address to chat with. "
         )
         if (!input) return null;
-
+        // EmialValidator returns a boolean value that shows us if 
         if (EmailValidator.validate(input)){
-            //Add chats -- we need user's login
+            //Add chats -- we need user's login == send the login detais to the DB
         }
     }
     //1E1E1E => Backround Color
@@ -30,7 +30,7 @@ function Sidebar() {
                     
                     <IconButton>
                          <ChatIcon />
-                     </IconButton>
+                     </IconButton> 
 
                      <IconButton>
                         <MoreVertIcon />
@@ -45,7 +45,7 @@ function Sidebar() {
                 <SearchInput placeholder="Search in chat" />
             </SearchIcon>
 
-            <NewChat>New Chat</NewChat>
+            <NewChat onClick = {createChat}>New Chat</NewChat>
         </Container>
     )
 }
@@ -56,9 +56,14 @@ export default Sidebar;
 const Container = styled.div``;
 
 const NewChat = styled(Button)`
-    width: 100%;
-    border-top: 1px solid whitesmoke;
-    border-bottom: 1px solid whitesmoke;
+    background-color: #7A63FF !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    margin-top: 20px !important;
 
 `;
 
@@ -71,7 +76,7 @@ const Header = styled.div`
     display: flex;
     position: sticky;
     top: 0;
-    backround-color: white;
+    background-color: #1E1E1E;
     z-index: 1;
     justify-content: space-between;
     align-items: center;
