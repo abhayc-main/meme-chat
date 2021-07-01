@@ -5,7 +5,7 @@ function Loading() {
         <center style ={{ display: "grid", placeItems: "center", height : "100vh" }}>
             <div>
                 <img 
-                    src = "./public/logo"
+                    src = "../public/logo"
                     alt=""
                     style = {{marginBottom: 10}}
                     height = {200}/>

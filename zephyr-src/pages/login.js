@@ -4,8 +4,16 @@ import styled from "styled-components"
 import { auth } from "../firebase";
 
 function login() {
-    const signin = () => {
+    const email = btn_email.value;
+    const pass = btn_password.value;
+
+    const signinG = () => {
         auth.signInWithPopup(provider).catch(alert)
+    }
+
+    const signin = () => {
+        auth.signInWithEmailAndPassword(email, pass);
+        
     }
     return (
         <Container>
@@ -14,7 +22,14 @@ function login() {
             </Head>
             <LoginContainer>
                 <Logo src= ""/>
-                <Button onClick = {signin} variant = "outlined">Sign In With Google</Button>
+                <input id="btn_email" type="email" placeholder="Email" />
+                <input id="btn_password" type="password" placeholder="Password" />
+
+                <Button onClick = {signin} variant = "outlined">Sign In</Button>
+
+                <Button onClick = {signinG} variant = "outlined">Sign In With Google</Button>
+                
+                 
             </LoginContainer>
         </Container>
     )
