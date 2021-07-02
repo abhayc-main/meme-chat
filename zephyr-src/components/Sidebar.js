@@ -24,7 +24,7 @@ function Sidebar() {
         <Container>
             <Header >
                 
-                <UserAvatar />
+                <UserAvatar onClick={() => auth.signOut()} />
  
                 <IconsContainer>
                     
@@ -76,7 +76,7 @@ const Header = styled.div`
     display: flex;
     position: sticky;
     top: 0;
-    background-color: #1E1E1E;
+    background-color: white;
     z-index: 1;
     justify-content: space-between;
     align-items: center;

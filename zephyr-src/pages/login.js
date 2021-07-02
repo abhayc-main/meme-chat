@@ -1,33 +1,25 @@
 
 import Head from "next/head";
 import styled from "styled-components"
-import { auth } from "../firebase";
+import { auth, provider } from "../firebase";
 
-function login() {
-    const email = btn_email.value;
-    const pass = btn_password.value;
+function Login() {
 
     const signinG = () => {
         auth.signInWithPopup(provider).catch(alert)
     }
 
-    const signin = () => {
-        auth.signInWithEmailAndPassword(email, pass);
-        
-    }
+
     return (
         <Container>
             <Head>
                 <title>Login</title>
             </Head>
+            <strong>The Zephyr</strong>
             <LoginContainer>
                 <Logo src= ""/>
-                <input id="btn_email" type="email" placeholder="Email" />
-                <input id="btn_password" type="password" placeholder="Password" />
 
-                <Button onClick = {signin} variant = "outlined">Sign In</Button>
-
-                <Button onClick = {signinG} variant = "outlined">Sign In With Google</Button>
+                <button onClick = {signinG} variant = "outlined">Sign In With Google</button>
                 
                  
             </LoginContainer>
@@ -35,7 +27,7 @@ function login() {
     )
 }
 
-export default login;
+export default Login;
 
 
 const Container = styled.div`
@@ -52,6 +44,7 @@ const LoginContainer = styled.div`
     align-items: center;
     background-color: #1E1E1E;
     border-radius: 5px;
+    box-shadow : 0px 4px 14px -3px rgba(0, 0, 0, 0.7)
 `;
 
 const Logo = styled.img`
