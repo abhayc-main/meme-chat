@@ -5,6 +5,8 @@ import Login from '../pages/login'
 import Loading from '../components/Loading'
 import firebase from "../firebase"
 import { useEffect } from "react";
+import 'firebase/firestore'
+
 
 function MyApp({ Component, pageProps }) {
   const [user, loading] = useAuthState(auth)
@@ -14,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       db.collection("users").doc(user.uid).set(
         { 
         email : user.email,
-        lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
+        //lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
         photoURL: user.photoURL,
       },
       {merge: true}

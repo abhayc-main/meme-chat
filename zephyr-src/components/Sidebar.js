@@ -6,8 +6,16 @@ import { Icon, Button } from "@material-ui/core";
 import IconButton from '@material-ui/core/IconButton';
 import Search from "@material-ui/icons/Search";
 import * as EmailValidator from "email-validator"
+import { auth } from "../firebase"
+import { db } from "../firebase";
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useCollection } from 'react-firebase-hooks/firestore'
+
 
 function Sidebar() {
+    const [user] = useAuthState(auth)
+    const userchatref = db.collection('chats').where('users',"array-contains", user.email)
+    const [chatsSnap] = useCollection(user)
 
     const createChat = () => {
         const input = prompt(
@@ -15,16 +23,26 @@ function Sidebar() {
         )
         if (!input) return null;
         // EmialValidator returns a boolean value that shows us if 
-        if (EmailValidator.validate(input)){
-            //Add chats -- we need user's login == send the login detais to the DB
+        if (EmailValidator.validate(input) && !chatAlreadyExists(inputs) && input != user.email){
+            //We gon have a collection => every single document is a chat => then its gon have an users array
+
+            db.collection('chats').add({
+
+            })
         }
+    }
+
+    const chatAlreadyExists = (recipients) => {
+        chatsSnap?.docs.find(
+            (chat) => 
+                chat.data().users.find((user)=> user === recipientEmail)?.length > 0)
     }
     //1E1E1E => Backround Color
     return (
         <Container>
             <Header >
                 
-                <UserAvatar onClick={() => auth.signOut()} />
+                <UserAvatar src={user.photoURL} onClick={() => auth.signOut()} />
  
                 <IconsContainer>
                     
@@ -46,6 +64,10 @@ function Sidebar() {
             </SearchIcon>
 
             <NewChat onClick = {createChat}>New Chat</NewChat>
+
+            {chatsSnap?.docs.map(chat => (
+                <Chat key={chat.id} id={chat.id} users = {chat.data().users} />
+            ))}
         </Container>
     )
 }

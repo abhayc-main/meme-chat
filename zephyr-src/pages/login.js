@@ -15,12 +15,11 @@ function Login() {
             <Head>
                 <title>Login</title>
             </Head>
-            <strong>The Zephyr</strong>
             <LoginContainer>
-                <Logo src= ""/>
-
-                <button onClick = {signinG} variant = "outlined">Sign In With Google</button>
-                
+                <Logo src= "/favicon2.ico"/>
+                <GoogleButton>
+                    <button onClick = {signinG} variant = "outlined">Sign In With Google</button>
+                </GoogleButton>
                  
             </LoginContainer>
         </Container>
@@ -48,7 +47,20 @@ const LoginContainer = styled.div`
 `;
 
 const Logo = styled.img`
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     margin-bottom: 50px;
 `;
+
+const GoogleButton = styled.div`
+
+    margin: 2px 0 5px;
+    min-height: 34px;
+    line-height: normal;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    margin-top: 16px;
+    padding: 6px 16px;
+
+    `;
