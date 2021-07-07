@@ -1,5 +1,6 @@
-# Zephyr💨🍃
-A chat application that focuses on dynamic connectivity
+# DERP lol ![image](https://user-images.githubusercontent.com/78511893/124801024-33b3fc80-df0b-11eb-9a78-d7f8319c6c1d.png)
+
+A chat application that prays to DERP
 
 > A React.js // Next.js project
 
