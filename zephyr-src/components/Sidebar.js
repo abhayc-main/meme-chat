@@ -42,7 +42,7 @@ function Sidebar() {
         <Container>
             <Header >
                 
-                <UserAvatar src={user.photoURL} onClick={() => auth.signOut()} />
+                <UserAvatar src={user.photoURL} />
  
                 <IconsContainer>
                     
@@ -51,7 +51,7 @@ function Sidebar() {
                      </IconButton> 
 
                      <IconButton>
-                        <MoreVertIcon />
+                        <MoreVertIcon onClick={() => auth.signOut()} />
                      </IconButton> 
 
                 </IconsContainer>
