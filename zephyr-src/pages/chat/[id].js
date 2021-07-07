@@ -28,12 +28,13 @@ export default Chat
 export async function getSeverSideProps(context){
     const ref = db.collections("chats").doc(context.query.id)
     // Prep Message 
-    const messagesRef = await ref
+    const messagesRes = await ref
     .collection('messages')
     .orderBy('timestamp','asc')
-    .get()
+    .get();
 
-    const messages = messagesRef.doc.map(doc =>({
+    const messages = messagesRes.docs
+    .map((doc) =>({
         id: doc.id,
         ...doc.data(),
     })).map(messages => ({
