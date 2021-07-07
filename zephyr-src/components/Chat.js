@@ -6,7 +6,7 @@ import router, {useRouter} from "next/router"
 
 function Chat({id, users}) {
     const user = useAuthState(auth)
-    const [recipientSnap] = useCollection(
+    const [recipientSnapshot] = useCollection(
         db.collection('users').where('email', '==','',getRecipientEmail(users, user))
     )
 
@@ -14,7 +14,7 @@ function Chat({id, users}) {
         router.push(`/chat/${id}`)
     }
     
-    const recipient = recipientSnap?.docs?.[0]?.data()
+    const recipient = recipientSnapshot?.docs?.[0]?.data()
     const recipientEmail = getRecipientEmail(users, user)
     
     return (
