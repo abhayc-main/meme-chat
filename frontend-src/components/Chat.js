@@ -3,6 +3,11 @@ import { auth,db } from "../firebase"
 import getRecipientEmail from "../utils/getRecipientEmail"
 import {useCollection} from "react-firebase-hooks/firestore"
 import router, {useRouter} from "next/router"
+import { useAuthState } from "react-firebase-hooks/auth"
+import { useCollection } from "react-firebase-hooks/firestore"
+import getRecipientEmail from "../utils/getRecipientEmail";
+
+//IMPORTSSSSSSSSSSS
 
 function Chat({id, users}) {
     const user = useAuthState(auth)
