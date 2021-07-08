@@ -1,5 +1,5 @@
 # DERP lol 
-![image](https://user-images.githubusercontent.com/78511893/124853497-d2b41500-df5a-11eb-9f78-429df909caf2.png)
+![image](https://user-images.githubusercontent.com/78511893/124853545-e19ac780-df5a-11eb-8d58-611aebdad505.png)
 
 
 A chat application that hails the DERP god
