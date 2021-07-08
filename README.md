@@ -1,8 +1,12 @@
-# DERP lol ![image](https://user-images.githubusercontent.com/78511893/124801024-33b3fc80-df0b-11eb-9a78-d7f8319c6c1d.png)
+# DERP lol 👌
+![image](https://user-images.githubusercontent.com/78511893/124853545-e19ac780-df5a-11eb-8d58-611aebdad505.png)
+
 
 A chat application that hails the DERP god
 
 > A React.js // Next.js project
+
+> LOL another way for me to learn about web dev
 
 ## Available Scripts
 
