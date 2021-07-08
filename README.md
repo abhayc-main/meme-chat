@@ -3,7 +3,8 @@
 A chat application that hails the DERP god
 
 > A React.js // Next.js project
-> LOL anther way for me to learn about web dev
+
+> LOL another way for me to learn about web dev
 
 ## Available Scripts
 
