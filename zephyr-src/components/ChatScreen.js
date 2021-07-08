@@ -17,7 +17,6 @@ import getRecipientEmail from "../utils/getRecipientEmail";
 
 
 function ChatScreen({chat, messages}) {
-
     const [user] = useAuthState(auth);
     const endOfMessagesRef = useRef(null)
     const [input, setInput] = useState("")
