@@ -1,12 +1,12 @@
-# DERP lol 👌
+# meme chat
 ![image](https://user-images.githubusercontent.com/78511893/124853545-e19ac780-df5a-11eb-8d58-611aebdad505.png)
 
 
-A chat application that hails the DERP god
+A chat application
 
 > A React.js // Next.js project
 
-> LOL another way for me to learn about web dev
+> another way for me to learn about web dev
 
 ## Available Scripts
 
