@@ -1,5 +1,4 @@
 # meme chat
-![image](https://user-images.githubusercontent.com/78511893/124853545-e19ac780-df5a-11eb-8d58-611aebdad505.png)
 
 
 A chat application
